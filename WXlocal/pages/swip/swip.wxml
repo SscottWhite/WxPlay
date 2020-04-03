@@ -1,0 +1,5 @@
+<!--pages/swip/swip.wxml-->
+<text>pages/swip/swip.wxml</text>
+<view class="fv">{{msg}}</view>
+<button bindtap="fb">tap</button>
+<button bindtap="fb2">tap2</button>
