@@ -1,5 +1,13 @@
 <!--pages/swip/swip.wxml-->
-<text>pages/swip/swip.wxml</text>
+<text class="textone">pages/swip/swip.wxml</text>
 <view class="fv">{{msg}}</view>
-<button bindtap="fb">tap</button>
-<button bindtap="fb2">tap2</button>
+<button class="bt1" bindtap="fb">tap</button>
+<button class="bt2" bindtap="fb2">tap2</button>
+<button class="b3t3" bindtap="fb3">tap3</button>
+
+<view class="cv1" >红色</view>
+<view class="cv2">绿色</view>
+<view class="cv3">菊色</view>
+<view class="cv2">粉色</view>
+
+<button class="bt4" bindtap="fb4">tap4</button>

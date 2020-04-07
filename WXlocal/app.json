@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/swip/swip"
+    "pages/swip/swip",
+    "pages/play/play"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -31,6 +31,22 @@ Component({
     },
     fb3:()=>{
       console.log(this);
+    },
+    
+  },
+
+  onload(){
+    var x = 11;
+    var obj = {
+      x: 22,
+      methods: {
+        x: 33,
+        say: function () { console.log("这里"+this.x) },
+        say2: () => { console.log("那里"+this.x) }
+      }
     }
+ 
+    obj.methods.say();
+    obj.methods.say2();
   }
 })
