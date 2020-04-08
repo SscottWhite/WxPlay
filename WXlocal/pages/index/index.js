@@ -11,17 +11,19 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-   // wx.navigateTo({
-    //  url: '../logs/logs'
-  // })
+    wx.navigateTo({
+      url: '../logs/logs'
+   })
   },
   mottoTap:function(){
     wx.navigateTo({
       url: '../play/play',
-    })
+   })
   },
   onLoad: function () {
-   // console.log(app.globalData.userInfo)
+    wx.navigateTo({
+      url: '../swip/swip',
+   })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -50,7 +52,6 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
