@@ -9,16 +9,20 @@
 } 
 
 .textone{
+  text-indent: 50em;
+  direction: ltr;
+  text-align: center;
   font-style: normal;
   background-color: deeppink;
 }
 /*class以bt开头*/
 button[class^=bt]{
-   background-color: hotpink;
+   background-color: rgb(152, 248, 195);
 }
 /*class以2结尾 ,加单引号*/
 button[class$='2']{ 
   background-color: lawngreen;
+  cursor: help;
 }
 /*class包含3 ,加单引号*/
 button[class*='3']{

@@ -1,4 +1,6 @@
 // pages/swip/swip.js
+
+const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -11,7 +13,10 @@ Component({
    * 组件的初始数据
    */
   data: {
-      msg:"123"
+      msg:"123",
+      name:"",
+      pass:"",
+      userInfo :[]
   },
 
   /**
@@ -32,21 +37,40 @@ Component({
     fb3:()=>{
       console.log(this);
     },
-    
+    onLoad:function(){
+      var x = 11;
+      var that = this;
+      var obj = {
+        x: 22,
+        methods: {
+          x: 33,
+          say: function () { console.log("这里"+this.x) },
+          say2: () => { console.log("那里"+that) }
+        }
+      }
+   
+      obj.methods.say();
+      obj.methods.say2();
+
+     if(app.globalData.userInfo){
+        this.setData({
+          userInfo: app.globalData.userInfo
+        })
+     }else{
+       /*this.setData({
+          name: wx.getStorageSync('name')
+       })*/
+       wx.switchTab({
+         url: '../index/index',
+       })
+     }
+
+    },
+
+    backTap:function(){
+      wx.navigateBack();
+    }
   },
 
-  onload(){
-    var x = 11;
-    var obj = {
-      x: 22,
-      methods: {
-        x: 33,
-        say: function () { console.log("这里"+this.x) },
-        say2: () => { console.log("那里"+this.x) }
-      }
-    }
- 
-    obj.methods.say();
-    obj.methods.say2();
-  }
+  
 })

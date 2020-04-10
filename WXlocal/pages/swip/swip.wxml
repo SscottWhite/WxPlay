@@ -1,5 +1,5 @@
 <!--pages/swip/swip.wxml-->
-<text class="textone">pages/swip/swip.wxml</text>
+<text class="texttwo">欢迎{{name}}{{userInfo.nickName}}!</text>
 <view class="fv">{{msg}}</view>
 <button class="bt1" bindtap="fb">tap</button>
 <button class="bt2" bindtap="fb2">tap2</button>
@@ -11,3 +11,20 @@
 <view class="cv2">粉色</view>
 
 <button class="bt4" bindtap="fb4">tap4</button>
+<button class="backbutton" bindtap = "backTap">返回</button>
+
+<!--
+all - 任意方向拖动
+vertical - 纵向拖动
+horizontal - 横向拖动
+none - 不能拖动
+前3个值好理解。如果direction设置为最后这个none，则只能依靠设置x,y属性值来为它进行在movable-area中的定位：
+-->
+<movable-area style="height: 200px;width: 200px;background: red;">
+  <!--蓝色任意方向拖动的内容-->
+  <movable-view direction="all" style="height: 50px; width: 50px; background: blue;">
+  </movable-view>
+  <!--黄色只能横向拖动的内容-->
+  <movable-view direction="horizontal" style="height: 20px; width: 50px; background: yellow;">
+  </movable-view>
+</movable-area>

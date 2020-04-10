@@ -1,8 +1,0 @@
-/* pages/play/play.wxss */
-.bt1{
-  background-color: chartreuse;
-}
-
-span{
-  font-size: 50px;
-}

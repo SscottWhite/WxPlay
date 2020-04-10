@@ -1,8 +1,0 @@
-<!--pages/play/play.wxml-->
-
-
-<view>
-    <button class="bt1" bindtap="bt1">来让我预测下你的想法吧</button>
-   <view wx:if="{{msg}}">你好</view>
-    <view wx:else>你好123</view>
-</view>
