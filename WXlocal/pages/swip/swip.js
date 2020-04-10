@@ -13,10 +13,10 @@ Component({
    * 组件的初始数据
    */
   data: {
-      msg:"123",
+      msg:"",
       name:"",
       pass:"",
-      userInfo :[]
+      userInfo :[],
   },
 
   /**
@@ -37,7 +37,7 @@ Component({
     fb3:()=>{
       console.log(this);
     },
-    onLoad:function(){
+    onLoad:function(options){
       var x = 11;
       var that = this;
       var obj = {
@@ -54,7 +54,7 @@ Component({
 
      if(app.globalData.userInfo){
         this.setData({
-          userInfo: app.globalData.userInfo
+          userInfo: app.globalData.userInfo,
         })
      }else{
        /*this.setData({

@@ -11,23 +11,24 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '../logs/logs'
    })
   },
   mottoTap:function(){
-    wx.navigateTo({
+    wx.switchTab({
       url: '../play/play',
    })
   },
-  onLoad: function () {
+  onLoad: function (query) {
     
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        hasUserInfo: true,
+       
       })
-      wx.navigateTo({
+      wx.switchTab({
         url: '../swip/swip',
         
      })

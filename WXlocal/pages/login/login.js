@@ -26,7 +26,7 @@ Component({
   methods: {
     WJMM:function(){
         this.setData({
-          WJMMStyle:"color: green ; font-size: 12px ; border-bottom:1px solid #000;"
+          WJMMStyle:"color: green ; font-size: 12px ;"
         })
     },
     phoneInput:function(e){
@@ -55,7 +55,7 @@ Component({
         })
     },
     login:function(){
-        if(this.data.phone.length > 0 && this.data.password.length > 0){
+        if(this.data.phone.length == 0 && this.data.password.length == 0){
           wx.setStorageSync('name', this.data.phone)
           wx.setStorageSync('pass', this.data.password)
           
@@ -71,8 +71,8 @@ Component({
         }else{
            wx.showToast({
              title: '信息不全',
-             icon:"loading",
              duration:1000,
+             icon:"none"  //loading,success
            })
         }
     },
