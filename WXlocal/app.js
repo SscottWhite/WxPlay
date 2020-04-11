@@ -1,6 +1,9 @@
 //app.js
 App({
   onLaunch: function (res) {
+    //登陆把缓存删了
+  //  wx.removeStorageSync('name')
+   // wx.removeStorageSync('pass')
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

@@ -18,6 +18,8 @@ Component({
     isGrayBtn:false,
     formType:'',
     WJMMStyle:'',
+    nameOld:'',
+    passOld:'',
   },
 
   /**
@@ -34,54 +36,79 @@ Component({
            phone: e.detail.value
         })
     },
-    grayTap:function(){
-        if(this.data.isGrayBtn){
-            this.setData({
-               formType:'',
-               isGrayBtn:false,
-               grayMsg:'一键变灰',
-            })
-        }else{
-           this.setData({
-            formType:'filter: grayscale(100%); -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);-ms-filter: grayscale(100%); -o-filter: grayscale(100%);',
-            isGrayBtn:true,
-            grayMsg:'一键还原',
-           })
-        }
-    },
     passwordInput:function(e){
         this.setData({
             password: e.detail.value
         })
     },
-    login:function(){
-        if(this.data.phone.length == 0 && this.data.password.length == 0){
-          wx.setStorageSync('name', this.data.phone)
-          wx.setStorageSync('pass', this.data.password)
+    grayTap:function(){
+      if(this.data.isGrayBtn){
+          this.setData({
+             formType:'',
+             isGrayBtn:false,
+             grayMsg:'一键变灰',
+          })
+      }else{
+         this.setData({
+          formType:'filter: grayscale(100%); -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);-ms-filter: grayscale(100%); -o-filter: grayscale(100%);',
+          isGrayBtn:true,
+          grayMsg:'一键还原',
+         })
+      }
+    },
+    loginFomr:function(data){
+      console.log(data.detail.value)
+      const that = this;
+      //  if(data.detail.value.name.length > 0 && data.detail.value.password.length > 0){
+          wx.setStorageSync('name', data.detail.value.name)
+          wx.setStorageSync('pass', data.detail.value.password)
           
-          if(app.globalData.userInfo){
-            wx.switchTab({
-              url: '../swip/swip'
-            })
-          }else{
-            wx.switchTab({
-              url: '../index/index'
-            })
-          }  
-        }else{
-           wx.showToast({
-             title: '信息不全',
-             duration:1000,
-             icon:"none"  //loading,success
-           })
-        }
+            if(app.globalData.userInfo){
+              wx.switchTab({
+                url: '../swip/swip'
+              })
+            }else{
+              wx.switchTab({
+                url: '../index/index'
+              })
+            }  
+      //  }else{
+      //    console.log(that.data.phone,that.data.password)
+      //     wx.showToast({
+      //       title: "随便输吧",
+      //       duration:2000,
+       //      icon:"none"  //loading,success
+      //     })
+      //  }
     },
     onLoad:function(){
-      this.setData({
+      const that = this; 
+        if(wx.getStorageSync('name') || wx.getStorageSync('pass')){
+            that.setData({
+               nameOld: wx.getStorageSync('name'),
+               passOld: wx.getStorageSync('pass'),
+            })
+        }
+      that.setData({
           formType:'',
           isGrayBtn:false,
           grayMsg:'一键变灰',
           WJMMStyle:'color: gray; font-size: 12px',
+      })
+      //使用缓存记录
+      /*
+      wx.getStorageInfo({
+        success (res) {
+          console.log(res.keys)         //用的记录
+          console.log(res.currentSize)  //当前大小
+          console.log(res.limitSize)    //总大小
+        }
+      })
+      */
+    },
+    backTap:function(){
+      wx.navigateTo({
+        url: '../login/login',
       })
     }
   }

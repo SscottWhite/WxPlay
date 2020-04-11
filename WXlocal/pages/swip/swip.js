@@ -66,9 +66,10 @@ Component({
      }
 
     },
-
     backTap:function(){
-      wx.navigateBack();
+       wx.redirectTo({
+         url: '../login/login',
+       })
     }
   },
 

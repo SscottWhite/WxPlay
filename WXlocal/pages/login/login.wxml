@@ -1,24 +1,26 @@
 <view class="loginForm" style="{{formType}}">
-  <view class="formView">
-    <image class="Image" src="../../images/ren.gif"></image>
-    <label class="labLine">账号</label>
-    <input class="putLine" placeholder="请输入账号" bindinput="phoneInput"></input>
-  </view>
-  <view class="line"></view>
+  <form bindsubmit="loginFomr">
+    <view class="formView">
+      <image class="Image" src="../../images/ren.gif"></image>
+      <label class="labLine">账号</label>
+      <input class="putLine" name="name" placeholder="请输入账号" bindinput="phoneInput" value="{{nameOld}}"></input>
+    </view>
+    <view class="line"></view>
 
-  <view class="formView">
-    <image class="Image" src="../../images/dota.gif"></image>
-    <label class="labLine">密码</label>
-    <input class="putLine" password="ture" placeholder="请输入密码" bindinput="passwordInput"></input>
-  </view>
-  <view class="line"></view>
+    <view class="formView">
+      <image class="Image" src="../../images/dota.gif"></image>
+      <label class="labLine">密码</label>
+      <input class="putLine" password="ture" name="password" placeholder="请输入密码" bindinput="passwordInput" value="{{passOld}}"></input>
+    </view>
+    <view class="line"></view>
 
-  <view >
-    <text class="WJMM" style="{{WJMMStyle}}" bindtap="WJMM" >忘记密码?</text>
-  </view>
+    <view >
+       <text class="WJMM" style="{{WJMMStyle}}" bindtap="WJMM" >忘记密码?</text>
+    </view>
 
-  <view class="loginbtnView">
-    <button class="loginbtn" type="primary" size="" loading="" plain="" disabled="" bindtap="login">登陆</button>
-    <button class="graybtn" bindtap="grayTap">{{grayMsg}}</button>
-  </view>
+    <view class="loginbtnView">
+       <button class="loginbtn" form-type="submit" type="primary" size="" loading="" plain="" disabled="" bindtap="login">登陆</button>
+       <button class="graybtn" bindtap="grayTap">{{grayMsg}}</button>
+    </view>
+  </form>
 </view>
