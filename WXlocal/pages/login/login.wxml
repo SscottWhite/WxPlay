@@ -23,4 +23,12 @@
        <button class="graybtn" bindtap="grayTap">{{grayMsg}}</button>
     </view>
   </form>
+
+<!--wxs文件测试  start
+  <wxs src='./login.wxs' module="tools"/>
+  <view >{{tools.foo}}</view> 
+  <view>{{tools.bar(tools.foo)}}</view>
+  <view >{{tools.msg}}</view> 
+end-->  
+
 </view>

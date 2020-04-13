@@ -17,58 +17,42 @@ Component({
       name:"",
       pass:"",
       userInfo :[],
+      style:"",
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    fb:function(){
-         this.setData({
-            msg:"hello"
-         })
-    },
-    fb2:function(){
-      console.log(this);//可以直接改
-      setTimeout(function(){
-          console.log(this);
-      })
-    },
-    fb3:()=>{
-      console.log(this);
-    },
     onLoad:function(options){
-      var x = 11;
-      var that = this;
-      var obj = {
-        x: 22,
-        methods: {
-          x: 33,
-          say: function () { console.log("这里"+this.x) },
-          say2: () => { console.log("那里"+that) }
-        }
-      }
-   
-      obj.methods.say();
-      obj.methods.say2();
-
      if(app.globalData.userInfo){
         this.setData({
           userInfo: app.globalData.userInfo,
         })
      }else{
-       /*this.setData({
-          name: wx.getStorageSync('name')
-       })*/
        wx.switchTab({
          url: '../index/index',
        })
-     }
+      }
 
+     if(wx.getStorageSync('gray')){
+          this.setData({
+            style:'filter: grayscale(100%); -webkit-filter: grayscale(100%);'+
+            ' -moz-filter: grayscale(100%);-ms-filter: grayscale(100%); -o-filter: grayscale(100%);',
+          })
+      }
     },
     backTap:function(){
        wx.redirectTo({
          url: '../login/login',
+       })
+    },
+    actionBtn:function(e){
+       wx.showActionSheet({
+         itemList: ["鸣凰","流翠"],
+         success (res) {
+          console.log(res.tapIndex)
+         },
        })
     }
   },

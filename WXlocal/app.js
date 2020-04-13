@@ -35,6 +35,11 @@ App({
         }
       }
     })
+
+    setTimeout(() => {
+        wx.setStorageSync('name', '')
+        wx.setStorageSync('pass', '')
+    },10000)
   },
   globalData: {
     userInfo: null

@@ -28,14 +28,23 @@ button[class$='2']{
 button[class*='3']{
   background-color: indigo;
 }
-.cv3+.cv2{
-  border-color: black;
+/*选择紧贴在.cv3之后的.cv2*/
+.cv3 + .cv2{ 
+  border-color: rgb(202, 50, 50);
+  border-width: 5px;
+  border-style: solid;
+}
+/*点击效果*/
+.cv1:hover{
+  border-color: rgb(56, 192, 22);
   border-width: 5px;
   border-style: solid;
 }
 
-.cv1:hover{
-  border-color: black;
-  border-width: 5px;
-  border-style: solid;
+.texttwo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

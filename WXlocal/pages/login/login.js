@@ -45,12 +45,13 @@ Component({
       if(this.data.isGrayBtn){
           this.setData({
              formType:'',
-             isGrayBtn:false,
+             isGrayBtn:false,            
              grayMsg:'一键变灰',
           })
       }else{
          this.setData({
-          formType:'filter: grayscale(100%); -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);-ms-filter: grayscale(100%); -o-filter: grayscale(100%);',
+          formType:'filter: grayscale(100%); -webkit-filter: grayscale(100%); '+
+          '-moz-filter: grayscale(100%);-ms-filter: grayscale(100%); -o-filter: grayscale(100%);',
           isGrayBtn:true,
           grayMsg:'一键还原',
          })
@@ -59,27 +60,29 @@ Component({
     loginFomr:function(data){
       console.log(data.detail.value)
       const that = this;
-      //  if(data.detail.value.name.length > 0 && data.detail.value.password.length > 0){
+        if(data.detail.value.name.length > 0 && data.detail.value.password.length > 0){
+          //登陆给缓存
           wx.setStorageSync('name', data.detail.value.name)
           wx.setStorageSync('pass', data.detail.value.password)
-          
-            if(app.globalData.userInfo){
+          wx.setStorageSync('gray', this.data.isGrayBtn)
+          //判断给个微信信息
+          if(app.globalData.userInfo){
               wx.switchTab({
                 url: '../swip/swip'
               })
-            }else{
+          }else{
               wx.switchTab({
                 url: '../index/index'
               })
-            }  
-      //  }else{
-      //    console.log(that.data.phone,that.data.password)
-      //     wx.showToast({
-      //       title: "随便输吧",
-      //       duration:2000,
-       //      icon:"none"  //loading,success
-      //     })
-      //  }
+          }  
+        }else{  //给提示
+         // console.log(that.data.phone,that.data.password)
+           wx.showToast({
+             title: "随便输吧",
+             duration:2000,
+             icon:"none"  //loading,success
+           })
+        }
     },
     onLoad:function(){
       const that = this; 
