@@ -60,7 +60,7 @@ Component({
     loginFomr:function(data){
       console.log(data.detail.value)
       const that = this;
-        if(data.detail.value.name.length > 0 && data.detail.value.password.length > 0){
+      //  if(data.detail.value.name.length > 0 && data.detail.value.password.length > 0){
           //登陆给缓存
           wx.setStorageSync('name', data.detail.value.name)
           wx.setStorageSync('pass', data.detail.value.password)
@@ -75,14 +75,14 @@ Component({
                 url: '../index/index'
               })
           }  
-        }else{  //给提示
+      //  }else{  //给提示
          // console.log(that.data.phone,that.data.password)
-           wx.showToast({
-             title: "随便输吧",
-             duration:2000,
-             icon:"none"  //loading,success
-           })
-        }
+      //     wx.showToast({
+       //      title: "随便输吧",
+      //       duration:2000,
+      //       icon:"none"  //loading,success
+      //     })
+     //   }
     },
     onLoad:function(){
       const that = this; 

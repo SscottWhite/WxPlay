@@ -13,5 +13,9 @@
   -->
   <button class="backbutton" bindtap = "backTap">返回</button>
   <button class="actbtn" bindtap="actionBtn">ShowAction</button>
-  
+
+  <button class="scan" catchtap="scanBtn">扫描</button>
+  <view bindtap="vibrate">动一动</view>
+  <input class="phoneCall"  type="text" maxlength="-1" placeholder="输入号码" 
+  confirm-type="search" bindfocus="bindFocus" bindinput="bindInput"></input>
 </view>

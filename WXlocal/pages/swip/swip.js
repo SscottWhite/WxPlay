@@ -25,6 +25,9 @@ Component({
    */
   methods: {
     onLoad:function(options){
+      wx.setTopBarText({
+        text: 'hello top!',
+      })
      if(app.globalData.userInfo){
         this.setData({
           userInfo: app.globalData.userInfo,
@@ -54,6 +57,22 @@ Component({
           console.log(res.tapIndex)
          },
        })
+    },
+    scanBtn:function(e){
+        wx.scanCode({
+           success: (res) => {
+               wx.showToast({
+                  title: res.result,
+                  icon:"success",
+                  duration:3000
+               })
+           },
+        })
+    },
+    vibrate:function(){
+      wx.vibrateLong({
+        complete: (res) => {},
+      })
     }
   },
 

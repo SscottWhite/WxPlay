@@ -41,6 +41,16 @@ App({
         wx.setStorageSync('pass', '')
     },10000)
   },
+  onShow:function(res){
+      wx.onMemoryWarning((result) => {
+          console.log(result)
+      })
+  },
+  onHide:function(res){
+     wx.offMemoryWarning((resr)=>{
+        console.log(resr)
+     })
+  },
   globalData: {
     userInfo: null
   }
