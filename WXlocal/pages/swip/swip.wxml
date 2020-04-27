@@ -18,4 +18,6 @@
   <view bindtap="vibrate">动一动</view>
   <input class="phoneCall"  type="text" maxlength="-1" placeholder="输入号码" 
   confirm-type="search" bindfocus="bindFocus" bindinput="bindInput"></input>
+
+  <view id="FZid" bindtap="FZview" data-setDown="1123" data-set-dong="345">复制内容</view>
 </view>

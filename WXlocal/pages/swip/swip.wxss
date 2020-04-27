@@ -48,3 +48,8 @@ button[class*='3']{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+#FZid{
+  position: absolute;
+  
+}

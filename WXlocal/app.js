@@ -8,7 +8,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    
     // 登录
     wx.login({
       success: res => {
@@ -44,7 +44,15 @@ App({
   onShow:function(res){
       wx.onMemoryWarning((result) => {
           console.log(result)
-      })
+      }),
+      //复制板的内容
+      wx.getClipboardData({
+        success: (res) => {
+           wx.setClipboardData({
+             data: '',
+           })
+        },
+    })
   },
   onHide:function(res){
      wx.offMemoryWarning((resr)=>{

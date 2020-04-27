@@ -73,6 +73,13 @@ Component({
       wx.vibrateLong({
         complete: (res) => {},
       })
+    },
+    FZview:function(e){
+      console.log(e);
+      wx.setClipboardData({
+        data: 'data',
+        
+      })
     }
   },
 
