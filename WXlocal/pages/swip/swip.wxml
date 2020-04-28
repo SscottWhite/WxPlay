@@ -19,5 +19,11 @@
   <input class="phoneCall"  type="text" maxlength="-1" placeholder="输入号码" 
   confirm-type="search" bindfocus="bindFocus" bindinput="bindInput"></input>
 
-  <view id="FZid" bindtap="FZview" data-setDown="1123" data-set-dong="345">复制内容</view>
+  <view id="FZid" bindtap="FZview" data-setDown="1123" data-set-dong="345">复制内容</view> 
+
+ <!--测试target内容-->
+  <view bindtap="testTar" id = "father">
+    father
+    <view id='son'>son</view>
+  </view>
 </view>

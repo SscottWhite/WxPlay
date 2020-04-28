@@ -78,8 +78,16 @@ Component({
       console.log(e);
       wx.setClipboardData({
         data: 'data',
-        
+        success:()=>{
+          wx.hideToast()
+        }
       })
+      
+        
+    },
+    testTar:function(e){
+       console.log(e.target.id)
+       console.log(e.currentTarget.id)
     }
   },
 

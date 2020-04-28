@@ -48,9 +48,17 @@ App({
       //复制板的内容
       wx.getClipboardData({
         success: (res) => {
+          console.log(res.data, res.data == "logs")
+          if(res.data == "logs"){
+            
+              wx.navigateTo({
+                url: '../WXlocal/pages/logs/logs',
+              })
+          }
            wx.setClipboardData({
-             data: '',
-           })
+             data: ''
+           }),
+           wx.hideToast()
         },
     })
   },
