@@ -50,12 +50,30 @@ button[class*='3']{
 }
 
 #FZid{
-  position: absolute;
-  
+  position: relative; 
 }
 
 
 #father{
-   position: absolute;
+   position: relative;
    right: 0;
+}
+
+.v0{
+   flex-direction: column;
+   /**文字中加空格可以来控制两端对其*/
+   text-align: justify; /**两端对齐*/
+   text-align-last: justify; /**保证一行或者最后一行两端对齐*/
+   justify-content: space-around;
+   flex-flow: column wrap;
+   flex-wrap: wrap;
+   align-items: center;
+   align-content: center;
+}
+
+/**紧跟v1*/
+.v0 .v1+.v1{  
+   color: aqua;
+   flex-grow: 2;
+   flex: auto;
 }

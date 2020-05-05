@@ -26,4 +26,13 @@
     father
     <view id='son'>son</view>
   </view>
+
+  <view class="v0">
+    <view class="v1">v1 23</view>
+    <view class="v1">v2 3 4 5</view>
+    <view class="v2">v3 6 78</view>
+    <view class="v1">v4 567 8 90</view>
+  </view>
+
+
 </view>

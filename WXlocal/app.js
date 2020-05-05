@@ -55,10 +55,10 @@ App({
                 url: '../WXlocal/pages/logs/logs',
               })
           }
-           wx.setClipboardData({
-             data: ''
-           }),
-           wx.hideToast()
+           //wx.setClipboardData({
+           //  data: ''
+           //}),
+           //wx.hideToast()
         },
     })
   },
