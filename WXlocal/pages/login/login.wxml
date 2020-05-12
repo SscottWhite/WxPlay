@@ -14,6 +14,13 @@
     </view>
     <view class="line"></view>
 
+    <view class="formView">
+      <image class="Image" src="../../images/dota.gif"></image>
+      <label class="labLine">邮箱</label>
+      <input class="putLine" type="email" placeholder="邮箱账号" bindinput="passwordInput" value="{{passOld}}"></input>
+    </view>
+    <view class="line"></view>
+
     <view >
        <text class="WJMM" style="{{WJMMStyle}}" bindtap="WJMM" >忘记密码?</text>
     </view>

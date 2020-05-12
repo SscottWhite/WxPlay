@@ -38,4 +38,8 @@
     <view class="a-view a-first">a-first</view>
     <view class="a-view a-second">a-second</view>
  </view>
+
+ <view >{{day}}, {{hou}}, {{min}},{{sec}}</view>
+ <view class='countDown'>倒计时：<text style='color:red'>{{countDownNum}}</text>s</view>
+
 </view>
