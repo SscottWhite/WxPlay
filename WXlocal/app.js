@@ -6,7 +6,7 @@ App({
    // wx.removeStorageSync('pass')
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
+    logs.unshift(Date.now())  //添加内容到数组最前
     wx.setStorageSync('logs', logs)
     
     // 登录
@@ -39,18 +39,18 @@ App({
     setTimeout(() => {
         wx.setStorageSync('name', '')
         wx.setStorageSync('pass', '')
-    },10000)
+    },5000)
   },
   onShow:function(res){
+    
       wx.onMemoryWarning((result) => {
           console.log(result)
       }),
       //复制板的内容
       wx.getClipboardData({
         success: (res) => {
-          console.log(res.data, res.data == "logs")
-          if(res.data == "logs"){
-            
+      //    console.log(res.data, res.data == "logs")
+          if(res.data == "logs"){           
               wx.navigateTo({
                 url: '../WXlocal/pages/logs/logs',
               })
@@ -64,7 +64,7 @@ App({
   },
   onHide:function(res){
      wx.offMemoryWarning((resr)=>{
-        console.log(resr)
+        // console.log(resr)
      })
   },
   globalData: {

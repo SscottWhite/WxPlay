@@ -91,3 +91,7 @@ button[class*='3']{
 .a-second{
     background-color: coral;
 }
+
+.count{
+  position: absolute;
+}

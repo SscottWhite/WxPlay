@@ -39,7 +39,13 @@
     <view class="a-view a-second">a-second</view>
  </view>
 
- <view >{{day}}, {{hou}}, {{min}},{{sec}}</view>
- <view class='countDown'>倒计时：<text style='color:red'>{{countDownNum}}</text>s</view>
-
+<view class='count' >
+      <view class='name_left'>FENDI</view>
+      <view class='name_right'>
+        <!-- 活动结束：{{day}}天  -->
+        <text>{{hou}}</text>：
+        <text>{{min}}</text>：
+        <text>{{sec}}</text>
+      </view>
+    </view>
 </view>
